@@ -15,6 +15,9 @@ function App() {
     <div className="App">
       <CurrentBestSellers />
     </div>
+      <Routes>
+        
+      </Routes>
       </main>
       <footer>
         {/* dev information will go here*/}
