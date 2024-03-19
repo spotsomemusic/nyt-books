@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import { handleFetch } from './utils/fetchData';
 import './App.css';
 
@@ -24,24 +24,40 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>New York Times Best Sellers</h1>
-      {booksData && (
-        <ul>
-          <li>
-            <h2>{booksData.results.display_name}</h2>
+    <>
+      <header>
+        {/* Navigation will go here */}
+        <nav>
+          {/* Navigation links */}
+        </nav>
+      </header>
+      <main>
+        {/* Your content */}
+        <div className="App">
+          <h1>New York Times Best Sellers</h1>
+          {booksData && (
             <ul>
-              {booksData.results.books.map((book, index) => (
-                <li key={index}>
-                  <h3>{book.title}</h3>
-                  <p>{book.author}</p>
-                </li>
-              ))}
+              <li>
+                <h2>{booksData.results.display_name}</h2>
+                <ul>
+                  {booksData.results.books.map((book, index) => (
+                    <li key={index}>
+                      <h3>{book.title}</h3>
+                      <p>{book.author}</p>
+                      <img src={book.book_image} alt={book.title}></img>
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
-      )}
-    </div>
+          )}
+        </div>
+      </main>
+      <footer>
+        {/* Developer information will go here */}
+        <p>© 2024 JustLexa. All rights reserved.</p>
+      </footer>
+    </>
   );
 }
 
