@@ -1,74 +1,84 @@
-# [Project Name]
+### Justlexa TBD
+**Created by Justin and Alexa**
 
-Created by [team member], [team member], and [team member].
+### 🚀 Mission Statement
+**Our application, [app name], is designed for book enthusiasts, or those who want to explore best-selling books featured in The New York Times lists. It allows users to:**
+- Search for best-selling books by date or simply look at the current list.
+- Access detailed information about each book, including cover image and description.
 
-## 🚀 Mission statement
+### API
+**Link to API documentation:** [NYT Books API Documentation](https://developer.nytimes.com/docs/books-product/1/overview)
 
-Our application, [app name] is for [target audience]. It allows users to [what it does and why audience would use it]
+- **API Endpoint #1: Current Best Sellers**
+  - Endpoint: `https://api.nytimes.com/svc/books/v3/lists.json`
+  - Parameters:
+    - List of books to search (categories found in [Names JSON](https://api.nytimes.com/svc/books/v3/lists/names.json))
+    - Best sellers date
+    - Published date(date the list was published, typically after the best sellers date)
+    - Offset integer(In plain english, a number that is a multiple of 20 to decide whether to start the list from the 0th book, 20th book, 40th book, etc. This is optional.)
 
-## API
+- **API Endpoint #2: Get Best Sellers by Date**
+  - Endpoint: `https://api.nytimes.com/svc/books/v3/lists/{date}/{list}.json`
+  - Parameters:
+    - Date to search
+    - List of books
+    - Offset integer
 
-This application will use the [name of API] API. Below are the documentation and specific endpoints we intend to use.
+- **API Endpoint #3: Best Sellers List History**
+  - Endpoint: `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json`
+  - Parameters:
+    - Age group or demographic
+    - Author
+    - Contributor(Author as well as any other contributors such as an illustrator)
+    - ISBN
+    - Offset integer
+    - Price of book
+    - Publisher
+    - Title
 
-- Link to API documentation: [Link goes here]
-- [API endpoint #1]
-  - [List of data values used by the endpoint]
-- [API endpoint #2]
-  - [List of data values used by the endpoint]
-- [API endpoint #3]
-  - [List of data values used by the endpoint]
+### 👩‍💻 MVP User Stories
+**The core features of the application include:**
+- Users have the ability to search for best-selling books by a specific date.
+- Users can access detailed information about each best-selling book.
+- Users can search for the current best sellers for specific genres of books.
 
-[If your API requires an API key, say so here.]
+### 🤔 Stretch User Stories
+**If time permits, the following stretch features will be implemented in order of priority:**
+- Users will be able to…
+- Users will be able to…
+- Users will be able to…
 
-## 👩‍💻 MVP User Stories
-
-The core features of the application include:
-
-* Users can...
-* Users can...
-* Users can...
-
-## 🤔 Stretch User Stories
-
-If time permits, the following stretch features will be implemented in order of priority:
-
-* Users will be able to...
-* Users will be able to...
-* Users will be able to...
-
-## 📆 Timeline for reaching MVP in 1 week
-
-To ensure that we can complete all core features of the application in 1 week, we will aim to complete tasks according to the following timeline:
+### 📆 Timeline for Reaching MVP in 1 Week
 
 **Day 1**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- **Ticket 1: Initialize React App**
+  - Set up the React project using `npm create vite@latest` or similar tool.
+- **Ticket 2: API Key Configuration**
+  - Integrate the New York Times Books API key.
+- **Ticket 3: Basic Layout Design**
+  - Design a simple layout for the application.
 
 **Day 2**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- **Ticket 4: Best Sellers Search Functionality**
+  - Implement functionality to search for best-selling books.
+- **Ticket 5: Book Details Display**
+  - Display detailed information about each book.
 
 **Day 3**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- **Ticket 6: Genre-specific Best Sellers**
+  - Implement the feature to search for current best sellers for specific genres of books.
+- **Ticket 7: Best Sellers List History**
+  - Create functionality to explore the history of best-seller lists.
 
 **Day 4**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- **Ticket 8: UI Enhancements and Responsiveness**
+  - Refine the UI/UX with CSS and potentially integrate a UI framework.
+- **Ticket 9: Comprehensive Testing**
+  - Thoroughly test the application for bugs.
 
 **Day 5**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
 
-## Wireframes of each page in your application
+- **Wireframes of Each Page in Your Application**
+  - Develop wireframes for each page of the application.
 
-Below, you can find wireframes for our project. Each wireframe shows a different page of our application as well as the key components of the application. Details such as specific text values or images are intentionally not included:
 
-[Wireframe for page 1]
-
-[Wireframe for page 2]
