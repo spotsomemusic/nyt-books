@@ -9,6 +9,8 @@ function CurrentBestSellers() {
   const [error, setError] = useState(null);
   const [selectedList, setSelectedList] = useState("hardcover-fiction");
   const [booksCategories, setBooksCategories] = useState([]);
+  const [selectedBook, setSelectedBook] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -42,6 +44,16 @@ function CurrentBestSellers() {
     setSelectedList(event.target.value);
   };
 
+  const openModal = (book) => {
+    setSelectedBook(book);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedBook(null);
+    setModalOpen(false);
+  };
+
   if (error) {
     return <div>Error: {error.message}</div>;
   }
@@ -62,27 +74,33 @@ function CurrentBestSellers() {
             <li className="book" key={index}>
               <h2>{book.title}</h2>
               <p>{book.author}</p>
-              <img src={book.book_image} alt={book.title} />
-              <p>{book.description}</p>
-              <p>Publisher: {book.publisher}</p>
-              <p>ISBN: {book.primary_isbn10}</p>
-              <ul className="buy-links">
-                <h3>Buy Now:</h3>
-                {book.buy_links.map((link, i) => (
-                  <li key={i}>
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <img
+                src={book.book_image}
+                alt={book.title}
+                onClick={() => openModal(book)}
+              />
             </li>
           ))}
         </ul>
+      )}
+      {modalOpen && selectedBook && (
+        <div className="modal">
+          <h2>{selectedBook.title}</h2>
+          <p>{selectedBook.description}</p>
+          <p>Publisher: {selectedBook.publisher}</p>
+          <p>ISBN: {selectedBook.primary_isbn10}</p>
+          <ul className="buy-links">
+            <h3>Buy Now:</h3>
+            {selectedBook.buy_links.map((link, i) => (
+              <li key={i}>
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <button onClick={closeModal}>Close</button>
+        </div>
       )}
     </div>
   );
