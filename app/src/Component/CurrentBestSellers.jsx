@@ -6,17 +6,40 @@ const NYT_API_KEY = "ZzgeKyhP0Ly4wfA7p8cK2VQlzgbDQQO3";
 function CurrentBestSellers() {
   const [booksData, setBooksData] = useState(null);
   const [error, setError] = useState(null);
+  const [selectedList, setSelectedList] = useState("hardcover-fiction");
+  const [booksCategories, setBooksCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const categoriesUrl = `https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=${NYT_API_KEY}`;
+      const [categoriesData, categoriesError] = await handleFetch(categoriesUrl);
+
+      if (categoriesData) {
+        setBooksCategories(categoriesData.results.map(category => category.list_name));
+      }
+      if (categoriesError) {
+        setError(categoriesError);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${NYT_API_KEY}`;
+      const url = `https://api.nytimes.com/svc/books/v3/lists/current/${selectedList}.json?api-key=${NYT_API_KEY}`;
       const [data, error] = await handleFetch(url);
 
       if (data) setBooksData(data);
       if (error) setError(error);
     };
+
     fetchData();
-  }, []);
+  }, [selectedList]);
+
+  const handleSelectChange = (event) => {
+    setSelectedList(event.target.value);
+  };
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -25,6 +48,14 @@ function CurrentBestSellers() {
   return (
     <div>
       <h1>New York Times Best Sellers</h1>
+      <div>
+        <label htmlFor="listSelect">Select List:</label>
+        <select id="listSelect" value={selectedList} onChange={handleSelectChange}>
+          {booksCategories.map((category, index) => (
+            <option key={index} value={category}>{category}</option>
+          ))}
+        </select>
+      </div>
       {booksData && (
         <ul>
           {booksData.results.books.map((book, index) => (
