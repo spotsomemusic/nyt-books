@@ -3,9 +3,6 @@ import CurrentBestSellers from './Component/CurrentBestSellers';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
-
-export default App;
-
 function App() {
   return (
     <>
@@ -13,16 +10,17 @@ function App() {
         {/* nav will go here*/}
       </header>
       <main>
-    <div className="App">
-      <CurrentBestSellers />
-    </div>
-      <Routes>
-        <Route path="/" element={<CurrentBestSellers />} />
-      </Routes>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<CurrentBestSellers />} />
+          </Routes>
+        </div>
       </main>
       <footer>
         {/* dev information will go here*/}
       </footer>
     </>
-  )
+  );
 }
+
+export default App;
