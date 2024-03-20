@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { handleFetch } from "../utils/fetchData";
+import Dropdown from "./DropDown";
 
 const NYT_API_KEY = "ZzgeKyhP0Ly4wfA7p8cK2VQlzgbDQQO3";
 
@@ -49,12 +50,11 @@ function CurrentBestSellers() {
     <div>
       <h1>New York Times Best Sellers</h1>
       <div>
-        <label htmlFor="listSelect">Select List:</label>
-        <select id="listSelect" value={selectedList} onChange={handleSelectChange}>
-          {booksCategories.map((category, index) => (
-            <option key={index} value={category}>{category}</option>
-          ))}
-        </select>
+        <Dropdown
+          selectedList={selectedList}
+          handleSelectChange={handleSelectChange}
+          booksCategories={booksCategories}
+        />
       </div>
       {booksData && (
         <ul>
