@@ -1,5 +1,6 @@
 import React from 'react';
 import CurrentBestSellers from './Component/CurrentBestSellers';
+import SearchByDate from './Component/SearchByDate.jsx';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
@@ -13,6 +14,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<CurrentBestSellers />} />
+            <Route path="/abc" element={<SearchByDate />} />
           </Routes>
         </div>
       </main>
