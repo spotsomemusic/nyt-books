@@ -14,13 +14,13 @@ function App() {
       </header>
       <main>
         <div className="App" style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <Routes>
+        <Routes>
             <Route path="/" element={
               <>
                 <CurrentBestSellers />
-                <SearchByDate />
               </>
             } />
+            <Route path="/date" element={<SearchByDate />} />
           </Routes>
         </div>
       </main>
