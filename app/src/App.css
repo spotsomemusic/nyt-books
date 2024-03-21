@@ -64,6 +64,52 @@ li {
   margin: 0 10px;
 }
 
+.modal {
+  position: fixed; /* Fixed position to overlay on top of other content */
+  top: 50%; /* Position the modal 50% from the top of the viewport */
+  left: 50%; /* Position the modal 50% from the left of the viewport */
+  transform: translate(-50%, -50%); /* Center the modal horizontally and vertically */
+  background-color: white; /* Background color of the modal */
+  padding: 20px; /* Padding around the modal content */
+  border-radius: 8px; /* Border radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+  z-index: 1000; /* Ensure the modal appears above other content */
+  max-width: 80%; /* Maximum width of the modal */
+  max-height: 80%; /* Maximum height of the modal */
+  overflow: auto; /* Enable scrolling if modal content exceeds dimensions */
+}
+
+.modal h2 {
+  font-size: 1.5rem; /* Adjust heading font size */
+  margin-bottom: 10px; /* Bottom margin for heading */
+}
+
+.modal p {
+  font-size: 1rem; /* Adjust paragraph font size */
+  margin-bottom: 10px; /* Bottom margin for paragraphs */
+}
+
+.modal ul {
+  list-style-type: none; /* Remove bullet points from unordered lists */
+  padding: 0; /* Remove default padding */
+}
+
+.modal ul li {
+  margin-bottom: 5px; /* Bottom margin for list items */
+}
+
+.modal button {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  padding: 8px 16px; /* Padding inside the button */
+  cursor: pointer; /* Show pointer cursor on hover */
+  border-radius: 4px; /* Border radius for rounded corners */
+}
+
+.modal button:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
 
 
 

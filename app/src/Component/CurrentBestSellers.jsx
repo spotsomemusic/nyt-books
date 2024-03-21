@@ -38,6 +38,9 @@ function CurrentBestSellers() {
   const openModal = (book) => {
     setSelectedBook(book);
     setModalOpen(true);
+    console.log('Modal opened');
+    console.log('Value of selected book', book)
+    console.log('Value of modal open', modalOpen)
   };
 
   const closeModal = () => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Dropdown from "./DropDown";
@@ -12,7 +12,6 @@ const SearchByDate = () => {
   const [isFetching, setIsFetching] = useState(false);
   const [selectedList, setSelectedList] = useState("");
 
-  // Access booksCategories from the context
   const booksCategories = useContext(BookContext);
 
   const fetchData = async () => {
