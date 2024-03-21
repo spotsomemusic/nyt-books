@@ -58,58 +58,54 @@
   padding: 0;
 }
 
-
 li {
   list-style-type: none;
   margin: 0 10px;
 }
 
 .modal {
-  position: fixed; /* Fixed position to overlay on top of other content */
-  top: 50%; /* Position the modal 50% from the top of the viewport */
-  left: 50%; /* Position the modal 50% from the left of the viewport */
-  transform: translate(-50%, -50%); /* Center the modal horizontally and vertically */
-  background-color: white; /* Background color of the modal */
-  padding: 20px; /* Padding around the modal content */
-  border-radius: 8px; /* Border radius for rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
-  z-index: 1000; /* Ensure the modal appears above other content */
-  max-width: 80%; /* Maximum width of the modal */
-  max-height: 80%; /* Maximum height of the modal */
-  overflow: auto; /* Enable scrolling if modal content exceeds dimensions */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
 }
 
 .modal h2 {
-  font-size: 1.5rem; /* Adjust heading font size */
-  margin-bottom: 10px; /* Bottom margin for heading */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .modal p {
-  font-size: 1rem; /* Adjust paragraph font size */
-  margin-bottom: 10px; /* Bottom margin for paragraphs */
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .modal ul {
-  list-style-type: none; /* Remove bullet points from unordered lists */
-  padding: 0; /* Remove default padding */
+  list-style-type: none;
+  padding: 0;
 }
 
 .modal ul li {
-  margin-bottom: 5px; /* Bottom margin for list items */
+  margin-bottom: 5px;
 }
 
 .modal button {
-  background-color: #007bff; /* Button background color */
-  color: white; /* Button text color */
-  border: none; /* Remove border */
-  padding: 8px 16px; /* Padding inside the button */
-  cursor: pointer; /* Show pointer cursor on hover */
-  border-radius: 4px; /* Border radius for rounded corners */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 .modal button:hover {
-  background-color: #0056b3; /* Darker background color on hover */
+  background-color: #0056b3;
 }
-
-
-
