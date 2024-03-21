@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { handleFetch } from "../utils/fetchData";
 import Dropdown from "./DropDown";
 
-const NYT_API_KEY = "ZzgeKyhP0Ly4wfA7p8cK2VQlzgbDQQO3";
+const NYT_API_KEY = "XSnpZqnmRGg49PY5UFiRNhaRs9rbSxjt";
 
 const SearchByDate = () => {
   const [startDate, setStartDate] = useState(new Date());
