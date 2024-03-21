@@ -1,40 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { handleFetch } from "../utils/fetchData";
 import Dropdown from "./DropDown";
+import BookContext from "../Context/BookContext";
 
 const NYT_API_KEY = "ZzgeKyhP0Ly4wfA7p8cK2VQlzgbDQQO3";
 
 function CurrentBestSellers() {
   const [booksData, setBooksData] = useState(null);
-  const [error, setError] = useState(null);
   const [selectedList, setSelectedList] = useState("hardcover-fiction");
-  const [booksCategories, setBooksCategories] = useState([]);
   const [selectedBook, setSelectedBook] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const categoriesUrl = `https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=${NYT_API_KEY}`;
-      const [categoriesData, categoriesError] = await handleFetch(categoriesUrl);
-
-      if (categoriesData) {
-        setBooksCategories(categoriesData.results.map(category => category.list_name));
-      }
-      if (categoriesError) {
-        setError(categoriesError);
-      }
-    };
-
-    fetchCategories();
-  }, []);
+  const booksCategories = useContext(BookContext);
 
   useEffect(() => {
     const fetchData = async () => {
       const url = `https://api.nytimes.com/svc/books/v3/lists/current/${selectedList}.json?api-key=${NYT_API_KEY}`;
-      const [data, error] = await handleFetch(url);
+      try {
+        const [data, error] = await handleFetch(url);
 
-      if (data) setBooksData(data);
-      if (error) setError(error);
+        if (data) setBooksData(data);
+        if (error) setError(error);
+      } catch (error) {
+        console.error("Fetching error:", error);
+        setError(error);
+      }
     };
 
     fetchData();
