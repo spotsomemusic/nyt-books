@@ -38,12 +38,19 @@ const SearchByDate = () => {
       </button>
       <ul>
         {books.map((book, index) => (
-          <li key={index}>{book.title}</li> // Adjust according to your data structure
+          <li className="book" key={index}>
+            <h2>{book.title}</h2>
+            <p>{book.author}</p>
+            <img
+              src={book.book_image}
+              alt={book.title}
+            />
+          </li>
         ))}
       </ul>
     </div>
   );
-};
+}
 
 export default SearchByDate;
 // const SearchByDate = () => {

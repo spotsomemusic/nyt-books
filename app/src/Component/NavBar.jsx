@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavBar = ({ onCurrentBestSellersClick, onSearchByDateClick }) => (
+const NavBar = () => (
   <nav>
     <ul>
-      <li><button onClick={onCurrentBestSellersClick}>Current Best Sellers</button></li>
-      <li><button onClick={onSearchByDateClick}>Search by Date</button></li>
+      <li><Link to="/">Current Best Sellers</Link></li>
+      <li><Link to="/date">Search by Date</Link></li>
     </ul>
   </nav>
 );

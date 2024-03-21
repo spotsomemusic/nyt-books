@@ -1,10 +1,9 @@
 import React from 'react';
 import CurrentBestSellers from './Component/CurrentBestSellers';
 import SearchByDate from './Component/SearchByDate.jsx';
-import NavBar from './Component/NavBar'; 
+import NavBar from './Component/NavBar.jsx'
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-
 
 function App() {
   return (
@@ -14,12 +13,8 @@ function App() {
       </header>
       <main>
         <div className="App" style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <Routes>
-            <Route path="/" element={
-              <>
-                <CurrentBestSellers />
-              </>
-            } />
+          <Routes>
+            <Route path="/" element={<CurrentBestSellers />} />
             <Route path="/date" element={<SearchByDate />} />
           </Routes>
         </div>
