@@ -54,8 +54,8 @@ function CurrentBestSellers() {
 
   return (
     <div>
-      <h1>New York Times Best Sellers</h1>
-      <div>
+      <h1 className="heading">New York Times Best Sellers</h1>
+      <div className="dropdown-container">
         <Dropdown
           selectedList={selectedList}
           handleSelectChange={handleSelectChange}
@@ -63,11 +63,11 @@ function CurrentBestSellers() {
         />
       </div>
       {booksData && (
-        <ul>
+        <ul className="book-grid">
           {booksData.results.books.map((book, index) => (
             <li className="book" key={index}>
-              <h2>{book.title}</h2>
-              <p>{book.author}</p>
+              <h2 className="book-title">{book.title}</h2>
+              <p className="book-author">{book.author}</p>
               <img
                 src={book.book_image}
                 alt={book.title}

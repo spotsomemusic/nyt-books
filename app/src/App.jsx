@@ -12,7 +12,7 @@ function App() {
         <NavBar />
       </header>
       <main>
-        <div className="App" style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <div className="App">
           <Routes>
             <Route path="/" element={<CurrentBestSellers />} />
             <Route path="/date" element={<SearchByDate />} />

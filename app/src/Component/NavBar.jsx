@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => (
-  <nav>
+  <nav className="nav-bar" >
     <ul>
-      <li><Link to="/">Current Best Sellers</Link></li>
-      <li><Link to="/date">Search by Date</Link></li>
+    <button> <li><Link to="/">Current Best Sellers</Link></li></button>
+    <button> <li><Link to="/date">Search by Date</Link></li></button>
     </ul>
   </nav>
 );
