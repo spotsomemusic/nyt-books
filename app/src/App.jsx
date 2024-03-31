@@ -9,6 +9,13 @@ function App() {
   return (
     <>
       <header>
+      <style>
+          {/* @import url('https://fonts.googleapis.com/css2?family=Tac+One&display=swap'), */}
+          @import url('https://fonts.googleapis.com/css2?family=Tac+One&family=Workbench&display=swap')
+        </style>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Tac+One&display=swap'),
+        </style>
         <NavBar />
       </header>
       <main>

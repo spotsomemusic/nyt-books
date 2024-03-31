@@ -78,7 +78,8 @@ function CurrentBestSellers() {
         </ul>
       )}
       {modalOpen && selectedBook && (
-        <div className="modal">
+        <div className="modal-backdrop">
+        <div className="modal"  >
           <h2>{selectedBook.title}</h2>
           <p>{selectedBook.description}</p>
           <p>Publisher: {selectedBook.publisher}</p>
@@ -94,6 +95,7 @@ function CurrentBestSellers() {
             ))}
           </ul>
           <button onClick={closeModal}>Close</button>
+          </div>
         </div>
       )}
     </div>

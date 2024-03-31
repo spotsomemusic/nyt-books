@@ -37,7 +37,7 @@ const SearchByDate = () => {
   };
 
   return (
-    <div>
+    <div className="dropdown-container">
       <h2>Search NYT Best Sellers by Date</h2>
       <DatePicker selected={startDate} onChange={setStartDate} />
       <Dropdown

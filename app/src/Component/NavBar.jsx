@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const NavBar = () => (
   <nav className="nav-bar" >
     <ul>
-    <button> <li><Link to="/">Current Best Sellers</Link></li></button>
-    <button> <li><Link to="/date">Search by Date</Link></li></button>
+    <button class="glow-on-hover" > <li><Link to="/">Current Best Sellers</Link></li></button>
+    <button class="glow-on-hover" > <li><Link to="/date">Search by Date</Link></li></button>
     </ul>
   </nav>
 );

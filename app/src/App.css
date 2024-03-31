@@ -1,4 +1,12 @@
+
 .App {
+  font-family: "Workbench", sans-serif;
+  font-size: 10px;
+  /*font-family: "Tac One", sans-serif; */
+  /* color: black; */
+  background-image: url('assets/sowavy.jpg');
+  /*background-size: cover; */
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,45 +15,46 @@
   margin: 0 auto;
 }
 
+h1{
+  font-family: "Workbench", sans-serif;
+  font-size: 20px;
+  color: black;
+}
 /* Enhanced NavBar styles */
 .nav-bar {
-  background: #333; /* Dark background for navbar */
+  background-image: url('assets/sowavy.jpg'); /* Dark background for navbar */
   padding: 0.5rem 0;
   display: flex;
   justify-content: center; /* Center the navbar */
   gap: 1rem;
+  opacity: 1;
 }
 
 .nav-link {
-  color: white; /* Set the text color to white */
   text-decoration: none; /* Remove underline from links */
   font-weight: bold; /* Make text bold */
 }
 
-/* Updated button styles to remove the native button appearance */
+
 button {
-  background: transparent;
-  border: 1px solid #007bff;
+  background: none;
+  /* border: 1px solid #007bff; */
   border-radius: 0.3rem;
   padding: 0.5rem 1rem;
-  color: #007bff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
-  color: white;
-}
 .dropdown-container {
-  display: flex; /* Use flexbox to align children */
-  justify-content: center; /* Center children horizontally */
-  align-items: center; /* Center children vertically */
-  margin-top: 1rem; /* Add some space above the dropdown */
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  margin-top: 1rem;
 }
 
 /* You may also want to style the select element itself */
 .dropdown-container select {
+  font-family: "Tac One", sans-serif;
   padding: 0.5rem;
   margin: 0 1rem; /* Add some space on the sides if necessary */
 }
@@ -95,21 +104,23 @@ button:hover {
 }
 /* Ensure the ul and li are properly styled */
 ul {
+  
   padding: 0;
   list-style-type: none;
 }
 
 li {
+  font-family: "Tac One", sans-serif;
   list-style-type: none;
 }
 
 /* Footer styles, matching the navbar */
-footer {
-  background: #333;
+/* footer {
+  background-image: url('assets/sowavy.jpg');
   color: white;
   padding: 1rem;
   text-align: center;
-}
+} */
 
 @media (max-width: 1200px) {
   .book {
@@ -127,4 +138,91 @@ footer {
   .book {
     max-width: 100%; /* Full width on very small screens */
   }
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modal {
+  background-color: #ffffff; /* White background for the modal */
+  color: #333; /* Dark text color for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  max-width: 600px; /* Maximum width for the modal */
+  width: 90%; /* Modal width will be 90% of the screen width, but won't exceed 600px */
+  max-height: 80vh; /* The maximum height for the modal */
+  overflow-y: auto; /* If the content is too long, let it scroll */
+}
+
+.glow-on-hover {
+  /* opensource button styles */
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-image: url('assets/sowavy.jpg');
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+
+.glow-on-hover:active {
+  color: transparent
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 0.55;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }
