@@ -32,13 +32,14 @@ const SearchByDate = () => {
     }
   };
 
-  const handleSelectChange = (event) => {
+  function handleSelectChange(event) {
     setSelectedList(event.target.value);
-  };
+  }
 
   return (
-    <div className="dropdown-container">
-      <h2>Search NYT Best Sellers by Date</h2>
+    <div>
+      <h1 className="heading">Search NYT Best Sellers by Date</h1>
+      <div className="dropdown-container">
       <DatePicker selected={startDate} onChange={setStartDate} />
       <Dropdown
         selectedList={selectedList}
@@ -47,12 +48,13 @@ const SearchByDate = () => {
       />
       <button onClick={fetchData} disabled={isFetching}>
         {isFetching ? 'Searching...' : 'Search'}
-      </button>
-      <ul>
+        </button>
+        </div>
+      <ul className="book-grid">
         {books.map((book, index) => (
           <li className="book" key={index}>
-            <h2>{book.title}</h2>
-            <p>{book.author}</p>
+            <h2 className="book-title">{book.title}</h2>
+            <p className="book-author">{book.author}</p>
             <img
               src={book.book_image}
               alt={book.title}

@@ -7,11 +7,13 @@
   background-image: url('assets/sowavy.jpg');
   /*background-size: cover; */
   background-position: center;
+  background-size: cover; /* Ensure it covers the entire space */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  max-width: 100%;
+  min-height: 100vh; /* Add min-height to stretch the full height of the viewport */
+  width: 100%; /* Ensure it takes the full width */
   margin: 0 auto;
 }
 
